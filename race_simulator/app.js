@@ -48,6 +48,7 @@ app.use((req, res, next) => {
   next();
 });
 
+app.post('/fill', (req, res) => workerCtrl.fillData(req, res));
 app.post('/auth', (req, res) => userCtrl.login(req, res));
 app.get('/fetch', (req, res) => workerCtrl.fetchActiveRaces(req, res));
 
@@ -57,7 +58,8 @@ function initApp() {
   return simulator.runEvery1min()
     .catch(err => console.log(err));
 }
-initApp();
+// Uncomment it after successfully calling /fill method
+// initApp();
 
 app.listen(env.port, () => {
   console.log(`The simulator has started at port ${env.port}`);
