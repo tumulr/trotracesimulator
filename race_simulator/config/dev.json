@@ -1,0 +1,12 @@
+{
+  "name": "race-simulator",
+  "port": 3000,
+  "db": {
+    "url": "mongodb://localhost:27017/trotrace"
+  },
+  "password": "lTgAYaLP9jRs",
+  "jwt": {
+    "secret": "12345",
+    "expiration": "5 mins"
+  }
+}
